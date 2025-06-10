@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Matemáticas< 1° Medio</title>
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    background-color: #a52019;
+                    margin: 0;
+                    color: burlywood;
+                }
+
+                header {
+                    background-color: #a52019;
+                    color: burlywood;
+                    padding: 1em;
+                    text-align: center;
+                }
+
+                nav {
+                    background-color: #7d1612;
+                    padding: 0.5em;
+                    display: flex;
+                    gap: 1em;
+                    flex-wrap: wrap;
+                }
+
+                nav a,
+                .dropdown-btn {
+                    color: burlywood;
+                    text-decoration: none;
+                    padding: 0.5em;
+                    background: none;
+                    border: none;
+                    cursor: pointer;
+                    font-size: 1em;
+                }
+
+                .dropdown {
+                    position: relative;
+                }
+
+                .dropdown-content {
+                    display: none;
+                    position: absolute;
+                    background-color: white;
+                    color: #333;
+                    min-width: 200px;
+                    z-index: 1;
+                    margin-top: 0.5em;
+                    border-radius: 5px;
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+                }
+
+                .dropdown-content a {
+                    display: block;
+                    padding: 0.5em;
+                    color: #333;
+                    text-decoration: none;
+                }
+
+                .dropdown-content a:hover {
+                    background-color: #f1f1f1;
+                }
+
+                .arrow {
+                    margin-left: 0.3em;
+                }
+
+                section {
+                    padding: 2em;
+                }
+
+                .card {
+                    background-color: white;
+                    color: #333;
+                    padding: 1em;
+                    margin: 1em 0;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                    border-radius: 10px;
+                }
+            </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Matemáticas - Primero Medio 2025</h1>
+    </header>
+
+    <nav>
+        <a href="Matematicas.html">General</a>
+
+        <div class="dropdown">
+            <button class="dropdown-btn" onclick="toggleDropdown('algebra')">Álgebra <span
+                    class="arrow">▼</span></button>
+            <div id="algebra" class="dropdown-content">
+                <a href="Ecuacuione.html">Ecuaciones Cuadráticas</a>
+                <a href="SIstema.html">Sistema de Ecuaciones</a>
+                <a href="FActo.html">Factorización y Productos Notables</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button class="dropdown-btn" onclick="toggleDropdown('geometria')">Geometría <span
+                    class="arrow">▼</span></button>
+            <div id="geometria" class="dropdown-content">
+                <a href="Semejanza.html">Semejanza</a>
+                <a href="Teoremas.html">Teoremas</a>
+                <a href="Homotecio.html">Homotecia</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button class="dropdown-btn" onclick="toggleDropdown('numeros')">Números <span
+                    class="arrow">▼</span></button>
+            <div id="numeros" class="dropdown-content">
+                <a href="Logaritmos.html">Logaritmos</a>
+                <a href="SeriesAritmeticas.html">Series Aritméticas</a>
+                <a href="Progresiones.html">Progresión</a>
+            </div>
+        </div>
+    </nav>
+
+
+    
+</section>
+
+    
+
+    <script>
+        function toggleDropdown(id) {
+            const dropdown = document.getElementById(id);
+            const allDropdowns = document.querySelectorAll(".dropdown-content");
+
+            allDropdowns.forEach((menu) => {
+                if (menu !== dropdown) menu.style.display = "none";
+            });
+
+            dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+        }
+
+        // Cierra el menú si haces clic fuera
+        window.onclick = function (event) {
+            if (!event.target.matches('.dropdown-btn')) {
+                const dropdowns = document.getElementsByClassName("dropdown-content");
+                for (let i = 0; i < dropdowns.length; i++) {
+                    dropdowns[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>
